@@ -10,19 +10,19 @@ import UIKit
 
 extension String {
 
-    func localized() -> String {
+    public func localized() -> String {
         return NSLocalizedString(self,
                                  comment: "")
     }
 
-    func textHeight(width: CGFloat = 300,
+    public func textHeight(width: CGFloat = 300,
                     font: UIFont =
         .systemFont(ofSize: 15)) -> CGFloat {
         return self.height(withConstrainedWidth: width,
                            font: font)
     }
 
-    func height(withConstrainedWidth width:
+    public func height(withConstrainedWidth width:
                 CGFloat,
                 font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width,
@@ -36,7 +36,7 @@ extension String {
         return ceil(boundingBox.height)
     }
 
-    func width(withConstraintedHeight height: CGFloat,
+    public func width(withConstraintedHeight height: CGFloat,
                font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: .greatestFiniteMagnitude,
                                     height: height)

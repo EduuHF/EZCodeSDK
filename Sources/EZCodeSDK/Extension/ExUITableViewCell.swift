@@ -10,12 +10,12 @@ import UIKit
 
 extension UITableViewCell {
 
-    var parentVC: UIViewController? {
+    public var parentVC: UIViewController? {
         return ((self.superview as? UITableView)?
             .delegate as? BaseVC)
     }
 
-    func makeCellAnimation(indexIn: Int) {
+    public func makeCellAnimation(indexIn: Int) {
 
         if indexIn % 2 == 0 {
             self.contentView.animFromLeft()
@@ -24,5 +24,5 @@ extension UITableViewCell {
         }
     }
 
-    @objc func onCellWillAppear() {}
+    @objc public func onCellWillAppear() {}
 }

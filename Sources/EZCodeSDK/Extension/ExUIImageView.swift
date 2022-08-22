@@ -18,7 +18,7 @@ extension UIImageView {
                                    failureImageTransition: .fadeIn(duration: 0.50))
     }
 
-    func loadIMG(url: String?) {
+    public func loadIMG(url: String?) {
 
         guard let urlString = url else {
             self.setDefaultPlaceholder()
@@ -34,7 +34,7 @@ extension UIImageView {
                        into: self)
     }
 
-    func setDefaultPlaceholder() {
+    public func setDefaultPlaceholder() {
         self.image = UIImage(named: "PokeEgg_IC")
     }
 }

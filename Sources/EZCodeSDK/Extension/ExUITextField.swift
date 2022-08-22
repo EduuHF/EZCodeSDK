@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-enum TFKind {
+public enum TFKind {
     case email, pass, phone, normal
 }
 
 extension UITextField {
 
-    func validateFieldFor(kind: TFKind) -> Bool {
+    public func validateFieldFor(kind: TFKind) -> Bool {
 
         var isValid: Bool = true
         switch kind {

@@ -37,7 +37,7 @@ extension UIViewController {
     }
 
     // MARK: - Alert Methods
-    func showAlertView(title: String?,
+    public func showAlertView(title: String?,
                    msg: String?,
                    type: AlertKind = .success,
                    action: @escaping (() -> Void)) {
@@ -47,7 +47,7 @@ extension UIViewController {
                         action: action)
     }
 
-    func showAPIErrorView(title: String? = "",
+    public func showAPIErrorView(title: String? = "",
                       msg: String?,
                       type: AlertKind = .attention,
                       action: (() -> Void)? = nil) {
