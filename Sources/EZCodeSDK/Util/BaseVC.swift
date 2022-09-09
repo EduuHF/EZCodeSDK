@@ -12,7 +12,7 @@ import NVActivityIndicatorView
 open class BaseVC: UIViewController {
 
     // MARK: - Lifecycle Methods
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         self.preSetupUI()
     }
@@ -23,7 +23,7 @@ open class BaseVC: UIViewController {
         self.view.backgroundColor = .mainAppColor
     }
 
-    private func setupNavBar(title: String,
+    public func setupNavBar(title: String,
                              colorTitle: UIColor? = .colorRed,
                              colorNav: UIColor? = .mainAppColor,
                              withBackBtn: Bool? = true,
@@ -86,7 +86,7 @@ open class BaseVC: UIViewController {
 
     }
 
-    func hideLoadingView() {
+    public func hideLoadingView() {
 
         self.view
             .isUserInteractionEnabled = true
@@ -102,42 +102,5 @@ open class BaseVC: UIViewController {
     @objc func onBack() {
         self.navigationController?
             .popViewController(animated: true)
-    }
-}
-
-extension BaseVC: ViewInterface {
-
-    public func showAlert(title: String?,
-                          msg: String) {
-        self.showAlertView(title: title,
-                           msg: msg,
-                           action: {
-            self.dismiss(animated: true)
-        })
-    }
-
-    public func configNavBar(title: String,
-                      colorTitle: UIColor? = .colorRed,
-                      colorNav: UIColor? = .mainAppColor,
-                      withBackBtn: Bool? = true,
-                      withLargeTitles: Bool? = false) {
-        self.setupNavBar(title: title,
-                         colorTitle: colorTitle,
-                         colorNav: colorNav,
-                         withBackBtn: withBackBtn,
-                         withLargeTitles: withLargeTitles)
-    }
-
-    public func showLoading(animName: String) {
-        self.showLoadingView(animName: animName)
-    }
-
-    public func showLoading(color: UIColor) {
-        self.showLoadingView(loadingType: .ballClipRotatePulse,
-                             color: color)
-    }
-
-    public func hideLoading() {
-        self.hideLoadingView()
     }
 }
