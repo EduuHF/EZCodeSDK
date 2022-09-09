@@ -132,9 +132,8 @@ extension BaseVC: ViewInterface {
         self.showLoadingView(animName: animName)
     }
 
-    public func showLoading(loadingType: NVActivityIndicatorType,
-                         color: UIColor) {
-        self.showLoadingView(loadingType: loadingType,
+    public func showLoading(color: UIColor) {
+        self.showLoadingView(loadingType: .ballClipRotatePulse,
                              color: color)
     }
 

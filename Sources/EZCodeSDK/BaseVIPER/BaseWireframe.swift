@@ -39,7 +39,7 @@ extension BaseWireframe {
 
 extension UIViewController {
     
-    func presentWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>,
+    public func presentWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>,
                                           animated: Bool = true,
                                           completion: (() -> Void)? = nil) {
         present(wireframe.viewController,
@@ -51,13 +51,13 @@ extension UIViewController {
 
 extension UINavigationController {
     
-    func pushWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>,
+    public func pushWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>,
                                        animated: Bool = true) {
         pushViewController(wireframe.viewController,
                            animated: animated)
     }
     
-    func setRootWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>,
+    public func setRootWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>,
                                           animated: Bool = true) {
         setViewControllers([wireframe.viewController],
                            animated: animated)
