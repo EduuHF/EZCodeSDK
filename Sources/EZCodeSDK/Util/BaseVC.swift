@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import NVActivityIndicatorView
 
-public class BaseVC: UIViewController {
+open class BaseVC: UIViewController {
 
     // MARK: - Lifecycle Methods
     public override func viewDidLoad() {
