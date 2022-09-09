@@ -3,7 +3,7 @@ import UIKit
 public protocol WireframeInterface: AnyObject {
 }
 
-public open class BaseWireframe<ViewController> where
+open class BaseWireframe<ViewController> where
 ViewController: UIViewController {
 
     private unowned var _viewController: ViewController
