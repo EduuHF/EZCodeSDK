@@ -114,18 +114,12 @@ extension UIView {
                                              cornerRadii: CGSize(width: 8, height: 8)).cgPath
     }
 
-    public func addVBorder(cornerList: UIRectCorner,
-                    radius: CGFloat,
-                    roundedRect: CGRect? = nil) {
-        let mPath = UIBezierPath(roundedRect: roundedRect ?? bounds,
-                                 byRoundingCorners: cornerList,
-                                 cornerRadii: CGSize(width: radius,
-                                                     height: radius))
-        let mMask = CAShapeLayer()
-        mMask.path = mPath.cgPath
-        layer.mask = mMask
-        self.setNeedsLayout()
-    }
+    public func addVBorder(cornerList: CACornerMask, radius: CGFloat) {
+
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        self.layer.maskedCorners = cornerList
+   }
 }
 
 extension AnimationType {

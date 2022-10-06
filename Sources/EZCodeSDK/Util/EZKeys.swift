@@ -20,12 +20,12 @@ struct EZKeys {
 
 
     // MARK: - Regex Keys
-    static let email  = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    static let pass   = "^.{6,}$"
-    static let cpf    = "^.{14,14}$"
-    static let cep    = "^.{9,9}$"
-    static let phone  = "^.{9,14}$"
-    static let cvc    = "^.{3,4}$"
-    static let card   = "^.{14,17}$"
+    static let emailRegex  = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    static let passRegex   = "^.{6,}$"
+    static let cpfRegex    = "^.{14,14}$"
+    static let cepRegex    = "^.{9,9}$"
+    static let phoneRegex  = "^.{9,14}$"
+    static let cvcRegex    = "^.{3,4}$"
+    static let cardRegex   = "^.{14,17}$"
 }
 

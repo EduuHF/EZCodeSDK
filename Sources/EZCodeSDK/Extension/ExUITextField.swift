@@ -19,11 +19,26 @@ extension UITextField {
         var isValid: Bool = true
         switch kind {
         case .email:
-            isValid = self.text != ""
+            isValid = self.isValid(regex: EZKeys.emailRegex)
+        case .pass:
+            isValid = self.isValid(regex: EZKeys.passRegex)
+        case .phone:
+            isValid = self.isValid(regex: EZKeys.phoneRegex)
         default:
-            isValid = self.text != ""
+            isValid = ((self.text?.isEmpty) != nil)
         }
 
         return isValid
     }
+
+    private func isValid(regex: String?) -> Bool {
+
+        guard let pRegex = regex else { return false }
+        guard let text = self.text,
+                !text.isEmpty else { return false }
+
+        return NSPredicate(format: "SELF MATCHES %@",
+                           pRegex).evaluate(with: text)
+    }
+
 }

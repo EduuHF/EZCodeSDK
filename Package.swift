@@ -35,6 +35,18 @@ let package = Package(
           url: "https://github.com/ninjaprox/NVActivityIndicatorView.git",
           .upToNextMajor(from: "5.0.0")
         ),
+        .package(
+          url: "https://github.com/kishikawakatsumi/KeychainAccess.git",
+          .upToNextMajor(from: "4.2.2")
+        ),
+        .package(
+          url: "https://github.com/Alamofire/Alamofire.git",
+          .upToNextMajor(from: "5.0.0")
+        ),
+        .package(
+          url: "https://github.com/mxcl/PromiseKit",
+          .upToNextMajor(from: "6.0.0")
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -45,8 +57,11 @@ let package = Package(
                 .product(name: "Nuke", package: "Nuke"),
                 .product(name: "Lottie", package: "lottie-ios"),
                 .product(name: "ViewAnimator", package: "ViewAnimator"),
-                .product(name: "NVActivityIndicatorView", package: "NVActivityIndicatorView")
-            ], linkerSettings: [
+                .product(name: "NVActivityIndicatorView", package: "NVActivityIndicatorView"),
+                .product(name: "KeychainAccess", package: "KeychainAccess"),
+                .product(name: "Alamofire", package: "Alamofire"),
+                .product(name: "PromiseKit", package: "PromiseKit")
+            ], path: "Sources/EZCodeSDK", linkerSettings: [
                 .linkedFramework("UIKit", .when(platforms: [.iOS]))
             ]),
         .testTarget(
