@@ -61,8 +61,9 @@ class LoadingView: UIView {
     private func setupUI(loadingType: NVActivityIndicatorType,
                          color: UIColor) {
 
-        let loadingView = NVActivityIndicatorView(frame: CGRect(x: (UIScreen.main.bounds.width / 2) - 50,
-                                                                y: (UIScreen.main.bounds.height / 2) - 150,
+        let vWidth = UIScreen.main.bounds.width
+        let loadingView = NVActivityIndicatorView(frame: CGRect(x: (vWidth / 2) - 50,
+                                                                y: (vWidth / 2) - 150,
                                                                 width: 100,
                                                                 height: 100),
                                                   type: loadingType,
