@@ -120,5 +120,4 @@ extension String {
     public func containsJSONProperty(propertyName: String) -> Bool {
         TestUtil.hasJSONProperty(value: self, forName: propertyName)
     }
-    
 }
