@@ -63,9 +63,9 @@ let package = Package(
                 .product(name: "PromiseKit", package: "PromiseKit")
             ], path: "Sources/EZCodeSDK", linkerSettings: [
                 .linkedFramework("UIKit", .when(platforms: [.iOS]))
-            ]),
+            ])/*,
         .testTarget(
             name: "EZCodeSDKTests",
-            dependencies: ["EZCodeSDK"]),
+            dependencies: ["EZCodeSDK"]),*/
     ]
 )
