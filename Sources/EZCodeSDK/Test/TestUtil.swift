@@ -5,7 +5,9 @@
 //  Created by Edu on 12/10/22.
 //
 
+#if canImport(XCTest)
 import XCTest
+#endif
 
 public enum JSONValueType: String {
     case string = "\"(\\w+)\":\\s?\"(\\w+)\""
