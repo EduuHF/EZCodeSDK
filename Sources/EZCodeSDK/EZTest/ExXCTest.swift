@@ -9,7 +9,7 @@
 import XCTest
 #endif
 
-public enum TestError: Error {
+public enum EZTestError: Error {
     case fileNotFound
 }
 
@@ -21,7 +21,7 @@ extension XCTest {
         guard let url = bundle.url(forResource: fileName,
                                    withExtension: "json") else {
             XCTFail("Missing file: \(fileName).json")
-            throw TestError.fileNotFound
+            throw EZTestError.fileNotFound
         }
 
         do {

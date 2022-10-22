@@ -15,7 +15,7 @@ public enum JSONValueType: String {
     case bool = "\"(\\w+)\":\\s?(true|false)"
 }
 
-public class TestUtil {
+public class EZTestUtil {
 
     public static func decodeJSON<T: Decodable>(jsonPath: String) -> T? {
 
@@ -91,7 +91,7 @@ extension String {
 
     public func hasJSONPropertyWithValue(property: String,
                                          value: String) -> Bool {
-        TestUtil.hasPropertyInJSON(value: self,
+        EZTestUtil.hasPropertyInJSON(value: self,
                                    type: .string) {
             $0 == property && $1 == value
         }
@@ -99,7 +99,7 @@ extension String {
 
     public func hasJSONPropertyWithValue(property: String,
                                          value: Int) -> Bool {
-        TestUtil.hasPropertyInJSON(value: self,
+        EZTestUtil.hasPropertyInJSON(value: self,
                                    type: .int) {
             if let intValue = Int($1) {
                 return $0 == property && intValue == value
@@ -110,7 +110,7 @@ extension String {
 
     public func hasJSONPropertyWithValue(property: String,
                                          value: Bool) -> Bool {
-        TestUtil.hasPropertyInJSON(value: self,
+        EZTestUtil.hasPropertyInJSON(value: self,
                                    type: .bool) {
             if let boolValue = Bool($1) {
                 return $0 == property && boolValue == value
@@ -120,6 +120,6 @@ extension String {
     }
 
     public func containsJSONProperty(propertyName: String) -> Bool {
-        TestUtil.hasJSONProperty(value: self, forName: propertyName)
+        EZTestUtil.hasJSONProperty(value: self, forName: propertyName)
     }
 }
